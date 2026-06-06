@@ -3,24 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <title>Richard Vincent | GRC Analyst Portfolio</title>
-  <meta
-    name="description"
-    content="Richard Vincent GRC analyst portfolio featuring governance, risk, compliance, audit reports, security controls, NIST CSF, ISO 27001, CIS Controls, risk assessments, and compliance documentation."
-  />
-
+  <meta name="description" content="Richard Vincent GRC analyst portfolio — audit reports, risk assessments, control mapping, GRC methodology, NIST CSF, ISO 27001, CIS Controls, and compliance documentation for small business environments." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@400;600;700&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
-    rel="stylesheet"
-  />
-
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
   <style>
     :root {
       --bg: #050914;
-      --panel: rgba(15, 28, 49, 0.78);
+      --panel: rgba(15,28,49,0.78);
       --text: #f0f5fc;
       --muted: #aebbd0;
       --muted-2: #7f8ea5;
@@ -30,883 +21,720 @@
       --success: #8df2b0;
       --warning: #ffd166;
       --danger: #ff8b94;
-      --border: rgba(255, 255, 255, 0.09);
-      --border-strong: rgba(159, 231, 255, 0.26);
-      --shadow: 0 24px 80px rgba(0, 0, 0, 0.44);
+      --border: rgba(255,255,255,0.09);
+      --border-strong: rgba(159,231,255,0.26);
+      --shadow: 0 24px 80px rgba(0,0,0,0.44);
       --max: 1120px;
       --serif: "IBM Plex Serif", Georgia, serif;
       --sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
       --mono: "IBM Plex Mono", "Fira Mono", monospace;
     }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-
-    body {
-      min-height: 100vh;
-      font-family: var(--sans);
-      color: var(--text);
+    *{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{
+      min-height:100vh; font-family:var(--sans); color:var(--text);
       background:
-        radial-gradient(circle at top left, rgba(85, 199, 255, 0.13), transparent 34rem),
-        radial-gradient(circle at 88% 12%, rgba(231, 200, 115, 0.08), transparent 28rem),
-        linear-gradient(180deg, #050914 0%, #07111f 50%, #050914 100%);
-      line-height: 1.65;
-      overflow-x: hidden;
+        radial-gradient(circle at top left, rgba(85,199,255,0.13), transparent 34rem),
+        radial-gradient(circle at 88% 12%, rgba(231,200,115,0.08), transparent 28rem),
+        linear-gradient(180deg,#050914 0%,#07111f 50%,#050914 100%);
+      line-height:1.65; overflow-x:hidden;
     }
-
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      background-image:
-        linear-gradient(rgba(255, 255, 255, 0.018) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.018) 1px, transparent 1px);
-      background-size: 44px 44px;
-      mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), transparent 65%);
-      z-index: -1;
+    body::before{
+      content:""; position:fixed; inset:0; pointer-events:none;
+      background-image:linear-gradient(rgba(255,255,255,0.018) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.018) 1px,transparent 1px);
+      background-size:44px 44px;
+      mask-image:linear-gradient(to bottom,rgba(0,0,0,0.6),transparent 65%);
+      z-index:-1;
     }
+    a{color:inherit;text-decoration:none;}
+    .container{width:min(92%,var(--max));margin:0 auto;}
 
-    a { color: inherit; text-decoration: none; }
-    .container { width: min(92%, var(--max)); margin: 0 auto; }
+    /* NAV */
+    .nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(18px);background:rgba(5,9,20,0.82);border-bottom:1px solid var(--border);}
+    .nav-inner{width:min(92%,var(--max));margin:0 auto;min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:20px;}
+    .brand{display:flex;align-items:center;gap:11px;font-weight:700;letter-spacing:-0.01em;}
+    .brand-mark{width:34px;height:34px;display:grid;place-items:center;border-radius:10px;color:#04101f;background:linear-gradient(135deg,var(--accent-2),var(--gold));font-size:0.78rem;font-weight:800;}
+    .nav-links{display:flex;flex-wrap:wrap;gap:14px;color:var(--muted);font-size:0.88rem;font-weight:600;}
+    .nav-links a:hover{color:var(--accent-2);transition:0.2s;}
 
-    .nav {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      backdrop-filter: blur(18px);
-      background: rgba(5, 9, 20, 0.8);
-      border-bottom: 1px solid var(--border);
+    /* HERO */
+    .hero{padding:86px 0 64px;}
+    .hero-grid{display:grid;grid-template-columns:1.08fr 0.92fr;gap:32px;align-items:stretch;}
+    .hero-copy{padding:34px 0;}
+    .kicker{display:inline-flex;align-items:center;gap:8px;color:var(--accent-2);font-size:0.73rem;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:16px;}
+    .kicker::before{content:"";width:20px;height:1px;background:linear-gradient(90deg,transparent,var(--accent-2));}
+    h1{font-family:var(--serif);font-size:clamp(3rem,6.5vw,5.9rem);line-height:0.96;letter-spacing:-0.045em;margin-bottom:22px;}
+    .grad{background:linear-gradient(135deg,var(--text),var(--accent-2) 52%,var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent;}
+    .lead{color:var(--muted);max-width:720px;font-size:1.05rem;line-height:1.75;margin-bottom:26px;}
+    .cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px;}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:11px 18px;border-radius:13px;border:1px solid transparent;font-weight:700;font-size:0.9rem;transition:0.2s ease;cursor:pointer;}
+    .btn-primary{color:#04101f;background:linear-gradient(135deg,var(--accent-2),var(--gold));box-shadow:0 18px 46px rgba(85,199,255,0.12);}
+    .btn-secondary{color:var(--text);background:rgba(255,255,255,0.045);border-color:var(--border);}
+    .btn:hover{transform:translateY(-2px);border-color:var(--border-strong);}
+    .executive-panel{padding:26px;border-radius:26px;border:1px solid var(--border-strong);background:radial-gradient(circle at top right,rgba(231,200,115,0.10),transparent 20rem),linear-gradient(180deg,rgba(15,28,49,0.9),rgba(8,18,33,0.76));box-shadow:var(--shadow);}
+    .panel-title{font-family:var(--serif);font-size:1.3rem;margin-bottom:18px;}
+    .profile-grid{display:grid;gap:12px;}
+    .profile-item{padding:14px;border:1px solid var(--border);border-radius:15px;background:rgba(255,255,255,0.035);}
+    .profile-item span{display:block;color:var(--muted-2);font-size:0.72rem;text-transform:uppercase;letter-spacing:0.1em;font-weight:700;margin-bottom:5px;}
+    .profile-item strong{color:var(--text);font-size:0.95rem;}
+
+    /* SECTIONS */
+    .section{padding:80px 0;}
+    .section-header{max-width:860px;margin-bottom:36px;}
+    .section-label{display:inline-flex;margin-bottom:12px;color:var(--gold);font-family:var(--mono);font-size:0.76rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;}
+    .section-title{font-family:var(--serif);font-size:clamp(2rem,4vw,3.4rem);line-height:1.06;letter-spacing:-0.035em;margin-bottom:14px;}
+    .section-intro{color:var(--muted);font-size:1rem;line-height:1.75;}
+
+    /* STATS ROW */
+    .stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:48px;}
+    .stat-card{padding:24px;border:1px solid var(--border);border-radius:22px;background:linear-gradient(180deg,var(--panel),rgba(8,18,33,0.72));box-shadow:0 16px 48px rgba(0,0,0,0.22);}
+    .stat-card h3{font-family:var(--serif);font-size:2.4rem;color:var(--gold);margin-bottom:6px;line-height:1;}
+    .stat-card p{color:var(--muted);font-size:0.9rem;line-height:1.5;}
+
+    /* ENVIRONMENT */
+    .env-card{display:grid;grid-template-columns:1fr 1fr;gap:24px;padding:30px;border:1px solid var(--border);border-radius:26px;background:radial-gradient(circle at top right,rgba(231,200,115,0.09),transparent 20rem),linear-gradient(180deg,var(--panel),rgba(8,18,33,0.72));box-shadow:0 16px 48px rgba(0,0,0,0.22);}
+    .env-card h3{font-family:var(--serif);font-size:1.5rem;margin-bottom:12px;}
+    .env-card p{color:var(--muted);line-height:1.75;margin-bottom:16px;}
+    .env-list{display:grid;gap:9px;list-style:none;}
+    .env-list li{padding:11px 14px;border:1px solid rgba(255,255,255,0.07);border-radius:13px;background:rgba(255,255,255,0.03);color:var(--muted);font-size:0.91rem;}
+    .env-list li strong{color:var(--text);}
+    .disclaimer{padding:14px 18px;border:1px solid rgba(231,200,115,0.18);border-radius:14px;background:rgba(231,200,115,0.05);color:var(--muted);font-size:0.88rem;}
+    .disclaimer strong{color:var(--gold);}
+
+    /* PROJECT CARDS — the key section */
+    .projects-grid{display:grid;gap:20px;}
+    .project-card{
+      display:grid;grid-template-columns:280px 1fr;
+      border:1px solid var(--border);border-radius:24px;
+      background:linear-gradient(180deg,var(--panel),rgba(8,18,33,0.72));
+      box-shadow:0 16px 48px rgba(0,0,0,0.22);
+      overflow:hidden;transition:0.22s ease;
     }
-
-    .nav-inner {
-      width: min(92%, var(--max));
-      margin: 0 auto;
-      min-height: 70px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
+    .project-card:hover{border-color:rgba(159,231,255,0.22);transform:translateY(-3px);}
+    .project-sidebar{
+      padding:28px 24px;
+      background:rgba(0,0,0,0.22);
+      border-right:1px solid rgba(255,255,255,0.07);
+      display:flex;flex-direction:column;gap:14px;
     }
+    .proj-num{font-family:var(--mono);font-size:0.72rem;color:var(--muted-2);letter-spacing:0.14em;text-transform:uppercase;}
+    .proj-status{display:inline-flex;width:fit-content;padding:5px 10px;border-radius:999px;font-size:0.68rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;}
+    .status-done{background:rgba(141,242,176,0.1);border:1px solid rgba(141,242,176,0.2);color:var(--success);}
+    .status-progress{background:rgba(85,199,255,0.1);border:1px solid rgba(85,199,255,0.2);color:var(--accent-2);}
+    .proj-meta-label{font-size:0.68rem;font-weight:700;color:var(--muted-2);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:3px;}
+    .proj-meta-value{color:var(--text);font-size:0.88rem;font-weight:600;}
+    .proj-tags{display:flex;flex-direction:column;gap:5px;margin-top:auto;}
+    .proj-tag{padding:4px 9px;border-radius:8px;background:rgba(85,199,255,0.08);border:1px solid rgba(85,199,255,0.14);color:var(--accent-2);font-size:0.7rem;font-weight:700;letter-spacing:0.07em;width:fit-content;}
+    .proj-tag.gold{background:rgba(231,200,115,0.08);border-color:rgba(231,200,115,0.16);color:var(--gold);}
+    .project-body{padding:28px 30px;}
+    .project-body h3{font-family:var(--serif);font-size:1.35rem;line-height:1.2;letter-spacing:-0.02em;margin-bottom:10px;}
+    .project-body .proj-desc{color:var(--muted);font-size:0.94rem;line-height:1.72;margin-bottom:18px;}
+    .deliverables-label{font-size:0.68rem;font-weight:800;color:var(--gold);text-transform:uppercase;letter-spacing:0.12em;font-family:var(--mono);margin-bottom:10px;}
+    .deliverables{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:20px;}
+    .deliverable-item{display:flex;align-items:flex-start;gap:8px;padding:9px 11px;border:1px solid rgba(255,255,255,0.06);border-radius:11px;background:rgba(255,255,255,0.025);font-size:0.84rem;color:var(--muted);}
+    .deliverable-item::before{content:"→";color:var(--accent-2);font-weight:700;flex-shrink:0;margin-top:1px;}
+    .proj-link{display:inline-flex;align-items:center;gap:7px;padding:9px 15px;border-radius:11px;background:rgba(159,231,255,0.08);border:1px solid rgba(159,231,255,0.18);color:var(--accent-2);font-size:0.84rem;font-weight:700;transition:0.2s;}
+    .proj-link:hover{background:rgba(159,231,255,0.14);}
 
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 11px;
-      font-weight: 700;
-      letter-spacing: -0.01em;
+    /* LIFECYCLE */
+    .lifecycle{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;}
+    .life-step{padding:22px;border:1px solid var(--border);border-radius:22px;background:linear-gradient(180deg,var(--panel),rgba(8,18,33,0.72));}
+    .life-step span{display:block;font-family:var(--mono);color:var(--gold);font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;margin-bottom:10px;}
+    .life-step h3{font-size:1.05rem;margin-bottom:8px;}
+    .life-step p{color:var(--muted);font-size:0.87rem;line-height:1.6;}
+
+    /* BEFORE/AFTER */
+    .before-after{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+    .ba-card{padding:26px;border:1px solid var(--border);border-radius:22px;background:linear-gradient(180deg,var(--panel),rgba(8,18,33,0.72));}
+    .ba-card h3{font-family:var(--serif);font-size:1.3rem;margin-bottom:14px;}
+    .ba-list{list-style:none;display:grid;gap:9px;}
+    .ba-list li{display:flex;align-items:flex-start;gap:10px;padding:10px 12px;border:1px solid rgba(255,255,255,0.06);border-radius:12px;background:rgba(255,255,255,0.025);color:var(--muted);font-size:0.9rem;}
+    .ba-list li::before{flex-shrink:0;margin-top:2px;}
+    .ba-list.before li::before{content:"✕";color:var(--danger);}
+    .ba-list.after li::before{content:"✓";color:var(--success);}
+    .tag{display:inline-flex;width:fit-content;padding:5px 10px;margin-bottom:14px;border-radius:999px;background:rgba(85,199,255,0.08);border:1px solid rgba(85,199,255,0.16);color:var(--accent-2);font-size:0.7rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;}
+
+    /* FRAMEWORK GRID */
+    .framework-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+    .framework-card{padding:24px;min-height:180px;border:1px solid var(--border);border-radius:22px;background:linear-gradient(180deg,var(--panel),rgba(8,18,33,0.72));transition:0.22s ease;}
+    .framework-card:hover{transform:translateY(-3px);border-color:rgba(159,231,255,0.22);}
+    .framework-card strong{display:block;color:var(--gold);font-family:var(--mono);font-size:0.82rem;margin-bottom:10px;}
+    .framework-card h3{font-size:1.08rem;margin-bottom:8px;line-height:1.25;}
+    .framework-card p{color:var(--muted);font-size:0.9rem;line-height:1.65;}
+
+    /* TRAINING */
+    .card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+    .card{padding:24px;border:1px solid var(--border);border-radius:22px;background:linear-gradient(180deg,var(--panel),rgba(8,18,33,0.72));box-shadow:0 16px 48px rgba(0,0,0,0.22);transition:0.22s ease;}
+    .card:hover{transform:translateY(-3px);border-color:rgba(159,231,255,0.22);}
+    .card h3{font-size:1.1rem;line-height:1.28;letter-spacing:-0.02em;margin-bottom:10px;}
+    .card p{color:var(--muted);font-size:0.93rem;line-height:1.7;}
+
+    /* CONTACT */
+    .contact-card{padding:28px;border:1px solid var(--border);border-radius:22px;background:linear-gradient(180deg,var(--panel),rgba(8,18,33,0.72));display:grid;gap:0;}
+    .contact-row{display:flex;justify-content:space-between;gap:18px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.07);color:var(--muted);}
+    .contact-row:last-child{border-bottom:0;}
+    .contact-row strong{color:var(--text);}
+    .contact-row a{color:var(--accent-2);}
+    .contact-row a:hover{text-decoration:underline;}
+
+    footer{padding:30px 0 38px;border-top:1px solid var(--border);text-align:center;color:var(--muted-2);font-size:0.86rem;line-height:1.7;}
+
+    /* FEATURED AUDIT BLOCK */
+    .audit-card{position:relative;overflow:hidden;display:grid;grid-template-columns:0.8fr 1.2fr;gap:28px;padding:30px;border:1px solid var(--border);border-radius:24px;background:linear-gradient(180deg,var(--panel),rgba(8,18,33,0.72));box-shadow:0 16px 48px rgba(0,0,0,0.22);transition:0.22s ease;}
+    .audit-card::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 10% 0%,rgba(231,200,115,0.12),transparent 18rem),radial-gradient(circle at 100% 70%,rgba(85,199,255,0.10),transparent 22rem);}
+    .audit-card>*{position:relative;z-index:1;}
+    .audit-stats{display:grid;gap:12px;align-content:start;}
+    .audit-stat{padding:15px;border:1px solid var(--border);border-radius:15px;background:rgba(255,255,255,0.035);}
+    .audit-stat span{display:block;color:var(--muted-2);font-family:var(--mono);font-size:0.7rem;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:5px;}
+    .audit-stat strong{color:var(--text);font-size:1rem;}
+    .audit-list{display:grid;gap:9px;margin:18px 0;list-style:none;}
+    .audit-list li{padding:10px 13px;border:1px solid rgba(255,255,255,0.07);border-radius:13px;background:rgba(255,255,255,0.03);color:var(--muted);font-size:0.91rem;}
+    .audit-card h3{font-size:1.2rem;line-height:1.28;letter-spacing:-0.02em;margin-bottom:10px;}
+    .audit-card p{color:var(--muted);font-size:0.94rem;line-height:1.72;}
+
+    @media(max-width:980px){
+      .hero-grid,.audit-card,.before-after,.env-card{grid-template-columns:1fr;}
+      .project-card{grid-template-columns:1fr;}
+      .project-sidebar{border-right:none;border-bottom:1px solid rgba(255,255,255,0.07);}
+      .deliverables{grid-template-columns:1fr;}
+      .stats-row,.framework-grid,.lifecycle{grid-template-columns:repeat(2,1fr);}
     }
-
-    .brand-mark {
-      width: 34px;
-      height: 34px;
-      display: grid;
-      place-items: center;
-      border-radius: 10px;
-      color: #04101f;
-      background: linear-gradient(135deg, var(--accent-2), var(--gold));
-      font-size: 0.78rem;
-      font-weight: 800;
-    }
-
-    .nav-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      color: var(--muted);
-      font-size: 0.88rem;
-      font-weight: 600;
-    }
-
-    .nav-links a:hover { color: var(--accent-2); }
-
-    .hero { padding: 86px 0 64px; }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.08fr 0.92fr;
-      gap: 32px;
-      align-items: stretch;
-    }
-
-    .hero-copy { padding: 34px 0; }
-
-    .kicker {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      color: var(--accent-2);
-      font-size: 0.73rem;
-      font-weight: 800;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      margin-bottom: 16px;
-    }
-
-    .kicker::before {
-      content: "";
-      width: 20px;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--accent-2));
-    }
-
-    h1 {
-      font-family: var(--serif);
-      font-size: clamp(3rem, 6.5vw, 5.9rem);
-      line-height: 0.96;
-      letter-spacing: -0.045em;
-      margin-bottom: 22px;
-    }
-
-    .grad {
-      background: linear-gradient(135deg, var(--text), var(--accent-2) 52%, var(--gold));
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-
-    .lead {
-      color: var(--muted);
-      max-width: 720px;
-      font-size: 1.05rem;
-      line-height: 1.75;
-      margin-bottom: 26px;
-    }
-
-    .cta-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 24px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 46px;
-      padding: 11px 16px;
-      border-radius: 13px;
-      border: 1px solid transparent;
-      font-weight: 700;
-      font-size: 0.94rem;
-      transition: 0.2s ease;
-    }
-
-    .btn-primary {
-      color: #04101f;
-      background: linear-gradient(135deg, var(--accent-2), var(--gold));
-      box-shadow: 0 18px 46px rgba(85, 199, 255, 0.12);
-    }
-
-    .btn-secondary {
-      color: var(--text);
-      background: rgba(255, 255, 255, 0.045);
-      border-color: var(--border);
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-      border-color: var(--border-strong);
-    }
-
-    .executive-panel {
-      padding: 26px;
-      border-radius: 26px;
-      border: 1px solid var(--border-strong);
-      background:
-        radial-gradient(circle at top right, rgba(231, 200, 115, 0.10), transparent 20rem),
-        linear-gradient(180deg, rgba(15, 28, 49, 0.9), rgba(8, 18, 33, 0.76));
-      box-shadow: var(--shadow);
-    }
-
-    .panel-title {
-      font-family: var(--serif);
-      font-size: 1.3rem;
-      margin-bottom: 18px;
-    }
-
-    .profile-grid { display: grid; gap: 12px; }
-
-    .profile-item {
-      padding: 14px;
-      border: 1px solid var(--border);
-      border-radius: 15px;
-      background: rgba(255, 255, 255, 0.035);
-    }
-
-    .profile-item span {
-      display: block;
-      color: var(--muted-2);
-      font-size: 0.72rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      font-weight: 700;
-      margin-bottom: 5px;
-    }
-
-    .profile-item strong {
-      color: var(--text);
-      font-size: 0.95rem;
-    }
-
-    .section { padding: 80px 0; }
-
-    .section-header {
-      max-width: 860px;
-      margin-bottom: 30px;
-    }
-
-    .section-label {
-      display: inline-flex;
-      margin-bottom: 12px;
-      color: var(--gold);
-      font-family: var(--mono);
-      font-size: 0.76rem;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-    }
-
-    .section-title {
-      font-family: var(--serif);
-      font-size: clamp(2rem, 4vw, 3.4rem);
-      line-height: 1.06;
-      letter-spacing: -0.035em;
-      margin-bottom: 14px;
-    }
-
-    .section-intro {
-      color: var(--muted);
-      font-size: 1rem;
-      line-height: 1.75;
-    }
-
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-
-    .card,
-    .audit-card,
-    .framework-card,
-    .contact-card {
-      border: 1px solid var(--border);
-      border-radius: 22px;
-      background: linear-gradient(180deg, var(--panel), rgba(8, 18, 33, 0.72));
-      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.22);
-    }
-
-    .card,
-    .framework-card {
-      padding: 24px;
-      transition: 0.22s ease;
-    }
-
-    .card:hover,
-    .framework-card:hover,
-    .audit-card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(159, 231, 255, 0.24);
-    }
-
-    .tag {
-      display: inline-flex;
-      width: fit-content;
-      padding: 6px 10px;
-      margin-bottom: 14px;
-      border-radius: 999px;
-      background: rgba(85, 199, 255, 0.08);
-      border: 1px solid rgba(85, 199, 255, 0.16);
-      color: var(--accent-2);
-      font-size: 0.7rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-    }
-
-    .card h3,
-    .framework-card h3,
-    .audit-card h3 {
-      font-size: 1.15rem;
-      line-height: 1.28;
-      letter-spacing: -0.02em;
-      margin-bottom: 10px;
-    }
-
-    .card p,
-    .framework-card p,
-    .audit-card p {
-      color: var(--muted);
-      font-size: 0.94rem;
-      line-height: 1.72;
-    }
-
-    .audit-card {
-      position: relative;
-      overflow: hidden;
-      display: grid;
-      grid-template-columns: 0.8fr 1.2fr;
-      gap: 28px;
-      padding: 30px;
-      transition: 0.22s ease;
-    }
-
-    .audit-card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      background:
-        radial-gradient(circle at 10% 0%, rgba(231, 200, 115, 0.12), transparent 18rem),
-        radial-gradient(circle at 100% 70%, rgba(85, 199, 255, 0.10), transparent 22rem);
-      opacity: 0.9;
-    }
-
-    .audit-card > * {
-      position: relative;
-      z-index: 1;
-    }
-
-    .audit-stats {
-      display: grid;
-      gap: 12px;
-      align-content: start;
-    }
-
-    .audit-stat {
-      padding: 16px;
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      background: rgba(255, 255, 255, 0.035);
-    }
-
-    .audit-stat span {
-      display: block;
-      color: var(--muted-2);
-      font-family: var(--mono);
-      font-size: 0.72rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      margin-bottom: 5px;
-    }
-
-    .audit-stat strong {
-      color: var(--text);
-      font-size: 1.05rem;
-    }
-
-    .audit-list {
-      display: grid;
-      gap: 10px;
-      margin: 20px 0;
-      list-style: none;
-    }
-
-    .audit-list li {
-      padding: 11px 13px;
-      border: 1px solid rgba(255, 255, 255, 0.07);
-      border-radius: 14px;
-      background: rgba(255, 255, 255, 0.03);
-      color: var(--muted);
-      font-size: 0.92rem;
-    }
-
-    .framework-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
-    }
-
-    .framework-card {
-      min-height: 180px;
-    }
-
-    .framework-card strong {
-      display: block;
-      color: var(--gold);
-      font-family: var(--mono);
-      font-size: 0.82rem;
-      margin-bottom: 10px;
-    }
-
-    .contact-card {
-      padding: 28px;
-      display: grid;
-      gap: 12px;
-    }
-
-    .contact-row {
-      display: flex;
-      justify-content: space-between;
-      gap: 18px;
-      padding: 14px 0;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
-      color: var(--muted);
-    }
-
-    .contact-row:last-child { border-bottom: 0; }
-    .contact-row strong { color: var(--text); }
-
-    footer {
-      padding: 30px 0 38px;
-      border-top: 1px solid var(--border);
-      text-align: center;
-      color: var(--muted-2);
-      font-size: 0.86rem;
-    }
-
-    @media (max-width: 980px) {
-      .hero-grid,
-      .audit-card {
-        grid-template-columns: 1fr;
-      }
-
-      .card-grid,
-      .framework-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 580px) {
-      .nav-inner {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 14px 0;
-      }
-
-      .nav-links { justify-content: flex-start; }
-      .hero { padding: 58px 0 44px; }
-      .contact-row { flex-direction: column; gap: 4px; }
+    @media(max-width:640px){
+      .stats-row,.framework-grid,.lifecycle,.card-grid{grid-template-columns:1fr;}
+      .nav-inner{flex-direction:column;align-items:flex-start;padding:14px 0;}
+      .hero{padding:58px 0 44px;}
+      .contact-row{flex-direction:column;gap:4px;}
     }
   </style>
 </head>
-
 <body>
-  <header class="nav">
-    <div class="nav-inner">
-      <a href="index.html" class="brand">
-        <span class="brand-mark">RV</span>
-        <span>Richard Vincent</span>
-      </a>
 
-      <nav class="nav-links" aria-label="Main navigation">
-        <a href="#featured-work">Featured Work</a>
-        <a href="#grc-projects">Projects</a>
-        <a href="#audit-reports">Audit Reports</a>
-        <a href="#technical-foundation">Technical Foundation</a>
-        <a href="#frameworks">Frameworks</a>
-        <a href="#certifications">Training</a>
-        <a href="#contact">Contact</a>
-      </nav>
+<header class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="brand">
+      <span class="brand-mark">RV</span>
+      <span>Richard Vincent</span>
+    </a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="#environment">Environment</a>
+      <a href="#projects">Projects</a>
+      <a href="#audit-reports">Audit Reports</a>
+      <a href="#lifecycle">Methodology</a>
+      <a href="#frameworks">Frameworks</a>
+      <a href="#training">Training</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <div class="kicker">Governance · Risk · Compliance</div>
+        <h1>Richard Vincent<br /><span class="grad">GRC Analyst Portfolio</span></h1>
+        <p class="lead">
+          Cybersecurity professional building a GRC-focused portfolio around control assessment,
+          audit reporting, risk documentation, and compliance mapping.
+          Technical SOC background strengthens my ability to understand the systems, threats,
+          and controls behind governance and compliance work.
+        </p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="Richard_Vincent_GRC_Resume.pdf" target="_blank" rel="noopener">View Resume</a>
+          <a class="btn btn-secondary" href="blog.html" target="_blank" rel="noopener">View Audit Reports</a>
+          <a class="btn btn-secondary" href="https://www.credly.com/users/richard-vincent.29374cc2" target="_blank" rel="noopener">Credly Badges</a>
+          <a class="btn btn-secondary" href="https://github.com/RichVince" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn btn-secondary" href="https://www.linkedin.com/in/richvince" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn btn-secondary" href="https://richvince.github.io" target="_blank" rel="noopener">SOC Portfolio</a>
+        </div>
+      </div>
+      <aside class="executive-panel" aria-label="Portfolio snapshot">
+        <h2 class="panel-title">Portfolio Snapshot</h2>
+        <div class="profile-grid">
+          <div class="profile-item">
+            <span>Target Roles</span>
+            <strong>GRC Analyst · Security Compliance · IT Audit · Third-Party Risk</strong>
+          </div>
+          <div class="profile-item">
+            <span>Core Work</span>
+            <strong>Audit reports, risk assessments, control mapping, policy gap analysis</strong>
+          </div>
+          <div class="profile-item">
+            <span>Frameworks</span>
+            <strong>NIST CSF 2.0 · ISO 27001:2022 · CIS Controls v8 · PCI DSS foundational study</strong>
+          </div>
+          <div class="profile-item">
+            <span>Portfolio Evidence</span>
+            <strong>5 structured audit reports · 20 findings · prioritized remediation plans</strong>
+          </div>
+        </div>
+      </aside>
     </div>
-  </header>
+  </section>
 
-  <main>
-    <section class="hero">
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <div class="kicker">Governance · Risk · Compliance</div>
-          <h1>Richard Vincent<br /><span class="grad">GRC Analyst Portfolio</span></h1>
-          <p class="lead">
-            Cybersecurity professional building a GRC-focused portfolio around control assessment,
-            audit reporting, risk documentation, compliance mapping, and practical security governance.
-            My technical SOC background strengthens my ability to understand the systems, risks, and controls behind compliance work.
-          </p>
-
-          <div class="cta-row">
-            <a class="btn btn-primary" href="Richard_Vincent_GRC_Resume.pdf" target="_blank" rel="noopener">View Resume</a>
-            <a class="btn btn-secondary" href="blog.html" target="_blank" rel="noopener">View Audit Reports</a>
-            <a class="btn btn-secondary" href="https://www.credly.com/users/richard-vincent.29374cc2" target="_blank" rel="noopener">View Credly Badges</a>
-            <a class="btn btn-secondary" href="https://github.com/RichVince" target="_blank" rel="noopener">GitHub</a>
-            <a class="btn btn-secondary" href="https://www.linkedin.com/in/richvince" target="_blank" rel="noopener">LinkedIn</a>
-            <a class="btn btn-secondary" href="https://richvince.github.io" target="_blank" rel="noopener">SOC Portfolio</a>
-          </div>
-        </div>
-
-        <aside class="executive-panel" aria-label="GRC profile summary">
-          <h2 class="panel-title">Portfolio Snapshot</h2>
-
-          <div class="profile-grid">
-            <div class="profile-item">
-              <span>Target Roles</span>
-              <strong>GRC Analyst · Security Compliance · IT Audit · Third-Party Risk</strong>
-            </div>
-
-            <div class="profile-item">
-              <span>Core Focus</span>
-              <strong>Risk assessments, control reviews, audit findings, remediation planning</strong>
-            </div>
-
-            <div class="profile-item">
-              <span>Framework Exposure</span>
-              <strong>NIST CSF · ISO 27001 · CIS Controls · PCI DSS foundational study · Security+ in progress</strong>
-            </div>
-
-            <div class="profile-item">
-              <span>Portfolio Evidence</span>
-              <strong>5 audit reports · control assessments · SOC-informed security projects</strong>
-            </div>
-          </div>
-        </aside>
-      </div>
-    </section>
-
-    <section class="section" id="featured-work">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-label">Featured Work</span>
-          <h2 class="section-title">Security Audit Report Collection</h2>
-          <p class="section-intro">
-            A structured GRC portfolio project demonstrating audit-style thinking across access control,
-            logging and monitoring, data protection, vulnerability management, and governance policy review.
-            This featured work highlights findings documentation, framework alignment, risk evaluation,
-            and practical remediation recommendations in a simulated business environment.
-          </p>
-        </div>
-
-        <article class="audit-card">
-          <div class="audit-stats">
-            <div class="audit-stat">
-              <span>Reports</span>
-              <strong>5 Published Reports</strong>
-            </div>
-
-            <div class="audit-stat">
-              <span>Frameworks</span>
-              <strong>NIST CSF · ISO 27001 · CIS Controls</strong>
-            </div>
-
-            <div class="audit-stat">
-              <span>Focus Areas</span>
-              <strong>Findings · Risk · Remediation</strong>
-            </div>
-
-            <div class="audit-stat">
-              <span>Environment</span>
-              <strong>Simulated Small Business</strong>
-            </div>
-          </div>
-
-          <div>
-            <span class="tag">Featured Governance Work</span>
-            <h3>Audit-Style Reporting and Framework-Aligned Recommendations</h3>
-            <p>
-              This collection showcases my ability to translate security observations into structured
-              findings, map issues to recognized frameworks, assign practical priorities, and recommend
-              remediation steps in a governance-focused format.
-            </p>
-
-            <ul class="audit-list">
-              <li>Access Control &amp; Identity Management Audit</li>
-              <li>Security Logging &amp; Monitoring Readiness Review</li>
-              <li>Data Protection &amp; Backup Controls Assessment</li>
-              <li>Vulnerability &amp; Patch Management Audit</li>
-              <li>Security Governance &amp; Policy Framework Review</li>
-            </ul>
-
-            <div class="cta-row">
-              <a class="btn btn-primary" href="blog.html" target="_blank" rel="noopener">View Audit Reports</a>
-              <a class="btn btn-secondary" href="#frameworks">View Framework Alignment</a>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="section" id="grc-projects">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-label">GRC Projects</span>
-          <h2 class="section-title">Governance and control-focused portfolio work.</h2>
-          <p class="section-intro">
-            Projects designed to show security governance, documentation discipline, risk thinking,
-            and the ability to translate technical security issues into practical business recommendations.
-          </p>
-        </div>
-
-        <div class="card-grid">
-          <article class="card">
-            <span class="tag">Controls</span>
-            <h3>Security Controls Assessment</h3>
-            <p>
-              Reviewed security controls and documented control gaps, risk exposure,
-              and recommended remediation actions aligned to practical governance requirements.
-            </p>
-          </article>
-
-          <article class="card">
-            <span class="tag">Risk</span>
-            <h3>Risk Register Sample</h3>
-            <p>
-              Created a structured risk register format to document risk description,
-              likelihood, impact, ownership, mitigation, and residual risk.
-            </p>
-          </article>
-
-          <article class="card">
-            <span class="tag">Policy</span>
-            <h3>Policy Review and Gap Analysis</h3>
-            <p>
-              Evaluated policy coverage and identified missing governance artifacts such as
-              acceptable use, access control, incident response, and data handling policies.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="audit-reports">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-label">Governance Practice</span>
-          <h2 class="section-title">Audit Reports</h2>
-          <p class="section-intro">
-            A dedicated audit-report collection demonstrating end-to-end GRC thinking:
-            scoping, evidence review, findings documentation, risk rating, framework mapping,
-            control maturity, and prioritized remediation.
-          </p>
-        </div>
-
-        <article class="audit-card">
-          <div class="audit-stats">
-            <div class="audit-stat">
-              <span>Reports Published</span>
-              <strong>5 Audit Reports</strong>
-            </div>
-
-            <div class="audit-stat">
-              <span>Frameworks</span>
-              <strong>NIST CSF · ISO 27001 · CIS</strong>
-            </div>
-
-            <div class="audit-stat">
-              <span>Environment</span>
-              <strong>Simulated Small Business</strong>
-            </div>
-
-            <div class="audit-stat">
-              <span>Focus</span>
-              <strong>Findings · Risk · Remediation</strong>
-            </div>
-          </div>
-
-          <div>
-            <span class="tag">Audit Portfolio</span>
-            <h3>Security Audit Report Collection</h3>
-            <p>
-              Five structured reports covering access control, security logging and monitoring,
-              data protection, vulnerability and patch management, and governance policy review
-              for a fictional small business environment.
-            </p>
-
-            <ul class="audit-list">
-              <li>Access Control &amp; Identity Management Audit</li>
-              <li>Security Logging &amp; Monitoring Readiness Review</li>
-              <li>Data Protection &amp; Backup Controls Assessment</li>
-              <li>Vulnerability &amp; Patch Management Audit</li>
-              <li>Security Governance &amp; Policy Framework Review</li>
-            </ul>
-
-            <div class="cta-row">
-              <a class="btn btn-primary" href="blog.html" target="_blank" rel="noopener">View Audit Reports →</a>
-              <a class="btn btn-secondary" href="#frameworks">View Framework Alignment</a>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="section" id="technical-foundation">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-label">Technical Foundation</span>
-          <h2 class="section-title">SOC experience that strengthens GRC analysis.</h2>
-          <p class="section-intro">
-            My SOC portfolio demonstrates hands-on cybersecurity work in incident investigation, Windows log analysis,
-            phishing review, DNS activity analysis, and web attack investigation. This technical foundation supports my
-            GRC direction because effective governance and compliance require understanding the systems, threats, and
-            controls being assessed.
-          </p>
-        </div>
-
-        <div class="card-grid">
-          <article class="card">
-            <span class="tag">SOC Bridge</span>
-            <h3>Incident Investigation</h3>
-            <p>
-              Practical investigation work involving network traffic, endpoint activity, suspicious accounts,
-              and documented containment recommendations.
-            </p>
-          </article>
-
-          <article class="card">
-            <span class="tag">Controls</span>
-            <h3>Security Evidence Review</h3>
-            <p>
-              Experience reviewing logs, indicators, findings, and recommendations that can support audit evidence,
-              control validation, and risk discussions.
-            </p>
-          </article>
-
-          <article class="card">
-            <span class="tag">Career Direction</span>
-            <h3>Technical-to-GRC Path</h3>
-            <p>
-              Positioning combines technical cybersecurity exposure with governance, risk, audit documentation,
-              and compliance-focused control assessment.
-            </p>
-            <div class="cta-row">
-              <a class="btn btn-secondary" href="https://richvince.github.io" target="_blank" rel="noopener">View SOC Portfolio</a>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="frameworks">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-label">Frameworks</span>
-          <h2 class="section-title">Control and compliance alignment.</h2>
-          <p class="section-intro">
-            These frameworks appear across the audit report collection and support future GRC, IT audit,
-            PCI DSS, and control assessment work.
-          </p>
-        </div>
-
-        <div class="framework-grid">
-          <article class="framework-card">
-            <strong>NIST CSF 2.0</strong>
-            <h3>Govern, Identify, Protect, Detect, Respond, Recover</h3>
-            <p>Used for cybersecurity governance, control maturity, and security risk communication.</p>
-          </article>
-
-          <article class="framework-card">
-            <strong>ISO 27001</strong>
-            <h3>Information Security Management Controls</h3>
-            <p>Used for policy, access control, logging, backup, vulnerability, and governance mapping.</p>
-          </article>
-
-          <article class="framework-card">
-            <strong>CIS Controls</strong>
-            <h3>Practical Technical Safeguards</h3>
-            <p>Used to connect security recommendations to actionable technical control improvements.</p>
-          </article>
-
-          <article class="framework-card">
-            <strong>PCI DSS Study</strong>
-            <h3>Payment Security Learning Track</h3>
-            <p>Current foundational study path for payment security, compliance evidence, and control validation.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="certifications">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-label">Training</span>
-          <h2 class="section-title">Cybersecurity and GRC development.</h2>
-          <p class="section-intro">
-            Current training combines technical security foundations with governance, risk,
-            compliance, audit readiness, and control assessment skills.
-          </p>
-        </div>
-
-        <div class="card-grid">
-          <article class="card">
-            <span class="tag">In Progress</span>
-            <h3>CompTIA Security+</h3>
-            <p>
-              Security fundamentals covering threats, architecture, implementation, operations,
-              risk, governance, and security controls.
-            </p>
-          </article>
-
-          <article class="card">
-            <span class="tag">Planned</span>
-            <h3>GRC Mastery</h3>
-            <p>
-              Planned next-step training focused on frameworks, audits, risk assessments,
-              compliance documentation, and governance workflows after current certification work is completed.
-            </p>
-          </article>
-
-          <article class="card">
-            <span class="tag">Verified Badges</span>
-            <h3>Credly Profile</h3>
-            <p>
-              Public badge profile used to verify completed training and certification achievements.
-            </p>
-            <div class="cta-row">
-              <a class="btn btn-secondary" href="https://www.credly.com/users/richard-vincent.29374cc2" target="_blank" rel="noopener">View Credly</a>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="contact">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-label">Contact</span>
-          <h2 class="section-title">Open to GRC, compliance, and security analyst opportunities.</h2>
-          <p class="section-intro">
-            Recruiters and hiring teams can access my resume, audit reports, verified badges, and project work below.
-          </p>
-        </div>
-
-        <div class="contact-card">
-          <div class="contact-row">
-            <strong>Resume</strong>
-            <a href="Richard_Vincent_GRC_Resume.pdf" target="_blank" rel="noopener">View Resume PDF</a>
-          </div>
-
-          <div class="contact-row">
-            <strong>Audit Reports</strong>
-            <a href="blog.html" target="_blank" rel="noopener">View GRC Audit Reports</a>
-          </div>
-
-          <div class="contact-row">
-            <strong>Credly</strong>
-            <a href="https://www.credly.com/users/richard-vincent.29374cc2" target="_blank" rel="noopener">credly.com/users/richard-vincent.29374cc2</a>
-          </div>
-
-          <div class="contact-row">
-            <strong>GitHub</strong>
-            <a href="https://github.com/RichVince" target="_blank" rel="noopener">github.com/RichVince</a>
-          </div>
-
-          <div class="contact-row">
-            <strong>LinkedIn</strong>
-            <a href="https://www.linkedin.com/in/richvince" target="_blank" rel="noopener">linkedin.com/in/richvince</a>
-          </div>
-
-          <div class="contact-row">
-            <strong>SOC Portfolio</strong>
-            <a href="https://richvince.github.io" target="_blank" rel="noopener">View SOC Portfolio</a>
-          </div>
-
-          <div class="contact-row">
-            <strong>Target Roles</strong>
-            <span>GRC Analyst · IT Audit Associate · Security Compliance Analyst · Risk Analyst</span>
-          </div>
-
-          <div class="contact-row">
-            <strong>Location</strong>
-            <span>Atlanta Metropolitan Area</span>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
+  <!-- STATS -->
+  <section style="padding:0 0 72px;">
     <div class="container">
-      Richard Vincent | GRC Analyst Portfolio
+      <div class="stats-row">
+        <article class="stat-card"><h3>5</h3><p>Structured audit reports with findings, risk ratings, and framework citations</p></article>
+        <article class="stat-card"><h3>20+</h3><p>Documented findings across identity, logging, data, patching, and governance</p></article>
+        <article class="stat-card"><h3>3</h3><p>Frameworks applied — NIST CSF, ISO 27001, and CIS Controls — per report</p></article>
+        <article class="stat-card"><h3>H/M/L</h3><p>Risk rating model used to communicate severity and prioritize remediation</p></article>
+      </div>
     </div>
-  </footer>
+  </section>
+
+  <!-- ENVIRONMENT -->
+  <section class="section" id="environment">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Portfolio Environment</span>
+        <h2 class="section-title">Meridian Consulting Group</h2>
+        <p class="section-intro">All portfolio projects are scoped to a consistent fictional organization — giving the work real context, continuity, and business relevance rather than disconnected exercises.</p>
+      </div>
+      <div class="env-card">
+        <div>
+          <h3>The Business Scenario</h3>
+          <p>Meridian Consulting Group is a 22-employee professional services firm operating in a Microsoft 365 cloud environment. No dedicated IT or security staff. Several common small-business security gaps that require governance, audit, risk management, and control improvement.</p>
+          <div class="disclaimer"><strong>Note:</strong> Meridian Consulting Group is a fictional organization created for educational and portfolio demonstration purposes only.</div>
+        </div>
+        <ul class="env-list">
+          <li><strong>Industry:</strong> Professional Services / Business Consulting</li>
+          <li><strong>Size:</strong> 22 employees, Atlanta GA</li>
+          <li><strong>Technology:</strong> Microsoft 365, SharePoint, OneDrive, Windows endpoints</li>
+          <li><strong>Security State:</strong> No security team, partial MFA, limited monitoring</li>
+          <li><strong>GRC Need:</strong> Policies, audits, access reviews, risk register, vendor oversight</li>
+          <li><strong>Audit Scope:</strong> All 5 reports cover distinct control domains for this org</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS — the key section -->
+  <section class="section" id="projects">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Portfolio Projects</span>
+        <h2 class="section-title">Five named GRC deliverables.</h2>
+        <p class="section-intro">Each project is a concrete, defined piece of work with specific outputs — not a description of GRC topics. Each one simulates what a junior GRC analyst would produce on the job.</p>
+      </div>
+
+      <div class="projects-grid">
+
+        <!-- PROJECT 1 -->
+        <article class="project-card">
+          <div class="project-sidebar">
+            <div>
+              <div class="proj-num">Project 01</div>
+              <div style="margin-top:6px;"><span class="proj-status status-done">Completed</span></div>
+            </div>
+            <div>
+              <div class="proj-meta-label">Audit Domain</div>
+              <div class="proj-meta-value">Access Control & Identity</div>
+            </div>
+            <div>
+              <div class="proj-meta-label">Risk Rating</div>
+              <div class="proj-meta-value" style="color:var(--danger);">High</div>
+            </div>
+            <div>
+              <div class="proj-meta-label">Findings</div>
+              <div class="proj-meta-value">4 documented findings</div>
+            </div>
+            <div class="proj-tags">
+              <span class="proj-tag">ISO 27001 A.5.16</span>
+              <span class="proj-tag">NIST PR.AA</span>
+              <span class="proj-tag gold">CIS Control 6</span>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3>Access Control & Identity Management Audit</h3>
+            <p class="proj-desc">Reviewed user account hygiene, MFA enforcement, shared account usage, and offboarding procedures for Meridian's Microsoft 365 environment. Identified critical gaps including three active accounts for departed employees and MFA disabled for 14 of 22 users.</p>
+            <div class="deliverables-label">What Was Produced</div>
+            <div class="deliverables">
+              <div class="deliverable-item">Scoped audit with defined evidence review methodology</div>
+              <div class="deliverable-item">4 findings with observation, risk statement & framework citation</div>
+              <div class="deliverable-item">Prioritized remediation table (Immediate / 30 Day / 90 Day)</div>
+              <div class="deliverable-item">Control maturity assessment across 5 access control areas</div>
+            </div>
+            <a class="proj-link" href="blog.html" target="_blank" rel="noopener">View Full Audit Report →</a>
+          </div>
+        </article>
+
+        <!-- PROJECT 2 -->
+        <article class="project-card">
+          <div class="project-sidebar">
+            <div>
+              <div class="proj-num">Project 02</div>
+              <div style="margin-top:6px;"><span class="proj-status status-done">Completed</span></div>
+            </div>
+            <div>
+              <div class="proj-meta-label">Audit Domain</div>
+              <div class="proj-meta-value">Logging & Monitoring</div>
+            </div>
+            <div>
+              <div class="proj-meta-label">Risk Rating</div>
+              <div class="proj-meta-value" style="color:var(--danger);">High</div>
+            </div>
+            <div>
+              <div class="proj-meta-label">Findings</div>
+              <div class="proj-meta-value">4 documented findings</div>
+            </div>
+            <div class="proj-tags">
+              <span class="proj-tag">ISO 27001 A.8.15</span>
+              <span class="proj-tag">NIST DE.AE</span>
+              <span class="proj-tag gold">CIS Control 8</span>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3>Security Logging & Monitoring Readiness Review</h3>
+            <p class="proj-desc">Assessed Microsoft 365 Unified Audit Log coverage, alert policy configuration, log retention period, and whether any process exists for reviewing security events. Found the organization completely unable to detect or investigate a security incident.</p>
+            <div class="deliverables-label">What Was Produced</div>
+            <div class="deliverables">
+              <div class="deliverable-item">Audit log coverage gap analysis across M365 workloads</div>
+              <div class="deliverable-item">Alert policy gap findings with BEC threat context</div>
+              <div class="deliverable-item">Log retention policy assessment vs. 12-month industry standard</div>
+              <div class="deliverable-item">Detective control maturity assessment with remediation table</div>
+            </div>
+            <a class="proj-link" href="blog.html" target="_blank" rel="noopener">View Full Audit Report →</a>
+          </div>
+        </article>
+
+        <!-- PROJECT 3 -->
+        <article class="project-card">
+          <div class="project-sidebar">
+            <div>
+              <div class="proj-num">Project 03</div>
+              <div style="margin-top:6px;"><span class="proj-status status-done">Completed</span></div>
+            </div>
+            <div>
+              <div class="proj-meta-label">Audit Domain</div>
+              <div class="proj-meta-value">Data Protection & Backup</div>
+            </div>
+            <div>
+              <div class="proj-meta-label">Risk Rating</div>
+              <div class="proj-meta-value" style="color:var(--warning);">Medium</div>
+            </div>
+            <div>
+              <div class="proj-meta-label">Findings</div>
+              <div class="proj-meta-value">4 documented findings</div>
+            </div>
+            <div class="proj-tags">
+              <span class="proj-tag">ISO 27001 A.8.13</span>
+              <span class="proj-tag">NIST PR.DS</span>
+              <span class="proj-tag gold">CIS Control 11</span>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3>Data Protection & Backup Controls Assessment</h3>
+            <p class="proj-desc">Evaluated backup coverage and restoration testing, workstation data risk, data classification posture, and BitLocker encryption status across employee devices. Found backups untested and four workstations storing client deliverables with no backup coverage.</p>
+            <div class="deliverables-label">What Was Produced</div>
+            <div class="deliverables">
+              <div class="deliverable-item">Backup design vs. operating effectiveness analysis</div>
+              <div class="deliverable-item">Data classification gap finding with 3-tier recommendation</div>
+              <div class="deliverable-item">Encryption posture assessment across workstation sample</div>
+              <div class="deliverable-item">Ransomware risk context and recovery readiness rating</div>
+            </div>
+            <a class="proj-link" href="blog.html" target="_blank" rel="noopener">View Full Audit Report →</a>
+          </div>
+        </article>
+
+        <!-- PROJECT 4 -->
+        <article class="project-card">
+          <div class="project-sidebar">
+            <div>
+              <div class="proj-num">Project 04</div>
+              <div style="margin-top:6px;"><span class="proj-status status-done">Completed</span></div>
+            </div>
+            <div>
+              <div class="proj-meta-label">Audit Domain</div>
+              <div class="proj-meta-value">Vulnerability & Patch Mgmt</div>
+            </div>
+            <div>
+              <div class="proj-meta-label">Risk Rating</div>
+              <div class="proj-meta-value" style="color:var(--danger);">High</div>
+            </div>
+            <div>
+              <div class="proj-meta-label">Findings</div>
+              <div class="proj-meta-value">4 documented findings</div>
+            </div>
+            <div class="proj-tags">
+              <span class="proj-tag">ISO 27001 A.8.8</span>
+              <span class="proj-tag">NIST PR.PS</span>
+              <span class="proj-tag gold">CIS Controls 1 & 7</span>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3>Vulnerability & Patch Management Audit</h3>
+            <p class="proj-desc">Reviewed asset inventory accuracy, OS patch status across sampled workstations, end-of-life software exposure, and network device firmware currency. Found two Windows 10 EOL devices, three workstations with patches 45–91 days outstanding, and no asset register.</p>
+            <div class="deliverables-label">What Was Produced</div>
+            <div class="deliverables">
+              <div class="deliverable-item">EOL software risk finding with CVE exposure context</div>
+              <div class="deliverable-item">Patch cadence gap analysis per sampled device</div>
+              <div class="deliverable-item">Asset inventory gap finding and minimum register recommendation</div>
+              <div class="deliverable-item">Network firmware remediation recommendation with SLA guidance</div>
+            </div>
+            <a class="proj-link" href="blog.html" target="_blank" rel="noopener">View Full Audit Report →</a>
+          </div>
+        </article>
+
+        <!-- PROJECT 5 -->
+        <article class="project-card">
+          <div class="project-sidebar">
+            <div>
+              <div class="proj-num">Project 05</div>
+              <div style="margin-top:6px;"><span class="proj-status status-done">Completed</span></div>
+            </div>
+            <div>
+              <div class="proj-meta-label">Audit Domain</div>
+              <div class="proj-meta-value">Governance & Policy</div>
+            </div>
+            <div>
+              <div class="proj-meta-label">Risk Rating</div>
+              <div class="proj-meta-value" style="color:var(--warning);">Medium</div>
+            </div>
+            <div>
+              <div class="proj-meta-label">Findings</div>
+              <div class="proj-meta-value">4 documented findings</div>
+            </div>
+            <div class="proj-tags">
+              <span class="proj-tag">ISO 27001 A.5.1</span>
+              <span class="proj-tag">NIST GV.PO</span>
+              <span class="proj-tag gold">CIS Control 14 & 17</span>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3>Security Governance & Policy Framework Review</h3>
+            <p class="proj-desc">Assessed policy framework completeness, security awareness training program, third-party vendor security requirements, and incident response readiness. Found zero formal policies, no training records, vendors with system access but no contractual security obligations, and no IR contact list.</p>
+            <div class="deliverables-label">What Was Produced</div>
+            <div class="deliverables">
+              <div class="deliverable-item">Policy inventory gap analysis vs. ISO 27001 Clause 5 requirements</div>
+              <div class="deliverable-item">Security awareness training gap finding with phishing risk context</div>
+              <div class="deliverable-item">Vendor management finding for 3 vendors with system access</div>
+              <div class="deliverable-item">IR readiness gap finding — root cause analysis for all 5 audits</div>
+            </div>
+            <a class="proj-link" href="blog.html" target="_blank" rel="noopener">View Full Audit Report →</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- AUDIT REPORTS CALL-OUT -->
+  <section class="section" id="audit-reports">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Audit Report Collection</span>
+        <h2 class="section-title">All five reports in one place.</h2>
+        <p class="section-intro">The full report collection demonstrates end-to-end GRC thinking: scoping, evidence review, findings documentation, risk rating, framework mapping, control maturity assessment, and prioritized remediation.</p>
+      </div>
+      <article class="audit-card">
+        <div class="audit-stats">
+          <div class="audit-stat"><span>Reports</span><strong>5 Published</strong></div>
+          <div class="audit-stat"><span>Frameworks</span><strong>NIST CSF · ISO 27001 · CIS</strong></div>
+          <div class="audit-stat"><span>Environment</span><strong>Meridian Consulting Group</strong></div>
+          <div class="audit-stat"><span>Risk Ratings</span><strong>High / Medium / Low</strong></div>
+        </div>
+        <div>
+          <span class="tag">Full Report Collection</span>
+          <h3>Security Audit Report Series — Meridian Consulting Group</h3>
+          <p>Five structured audit reports covering the most critical control domains for a small business cloud environment. Each report follows a consistent format: scope, methodology, findings with framework citations, recommendations with priority tiers, and a control maturity assessment.</p>
+          <ul class="audit-list">
+            <li>01 · Access Control &amp; Identity Management Audit — High Risk</li>
+            <li>02 · Security Logging &amp; Monitoring Readiness Review — High Risk</li>
+            <li>03 · Data Protection &amp; Backup Controls Assessment — Medium Risk</li>
+            <li>04 · Vulnerability &amp; Patch Management Audit — High Risk</li>
+            <li>05 · Security Governance &amp; Policy Framework Review — Medium Risk</li>
+          </ul>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="blog.html" target="_blank" rel="noopener">View All Audit Reports →</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- LIFECYCLE -->
+  <section class="section" id="lifecycle">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Methodology</span>
+        <h2 class="section-title">Audit methodology and GRC workflow.</h2>
+        <p class="section-intro">Each audit report follows a practical GRC methodology that mirrors how a junior analyst supports control assessments, audit readiness, findings documentation, and remediation tracking.</p>
+      </div>
+      <div class="lifecycle">
+        <article class="life-step"><span>01</span><h3>Identify</h3><p>Define the business environment, assets, systems, and control areas in scope.</p></article>
+        <article class="life-step"><span>02</span><h3>Assess</h3><p>Review evidence, determine control gaps, and evaluate risk exposure per finding.</p></article>
+        <article class="life-step"><span>03</span><h3>Document</h3><p>Write findings with observations, risks, framework citations, and maturity notes.</p></article>
+        <article class="life-step"><span>04</span><h3>Remediate</h3><p>Recommend prioritized actions with named owners, urgency, and effort estimates.</p></article>
+        <article class="life-step"><span>05</span><h3>Monitor</h3><p>Support ongoing improvement through review schedules and audit readiness tracking.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- BEFORE/AFTER -->
+  <section class="section" id="before-after">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Program Maturity</span>
+        <h2 class="section-title">Before and after the GRC assessment series.</h2>
+        <p class="section-intro">This shows the business value of the audit work: moving Meridian from undocumented, informal security practices toward a documented, framework-aligned governance and control baseline.</p>
+      </div>
+      <div class="before-after">
+        <article class="ba-card">
+          <span class="tag">Before Assessment</span>
+          <h3>Initial State — Control Gaps</h3>
+          <ul class="ba-list before">
+            <li>Three former employee accounts still active in M365</li>
+            <li>MFA not enforced for 14 of 22 users</li>
+            <li>No alert policies configured — zero detection capability</li>
+            <li>Backup restoration never tested</li>
+            <li>Two EOL Windows 10 devices, three with patches 45–91 days late</li>
+            <li>No information security policies, training, or IR plan</li>
+          </ul>
+        </article>
+        <article class="ba-card">
+          <span class="tag">After Recommendations</span>
+          <h3>Improvement Roadmap — Defined Outputs</h3>
+          <ul class="ba-list after">
+            <li>Immediate account revocation + offboarding checklist documented</li>
+            <li>M365 Conditional Access MFA enforcement recommended</li>
+            <li>5 alert policies defined; log retention path recommended</li>
+            <li>Quarterly backup test procedure and OneDrive KFM policy proposed</li>
+            <li>EOL upgrade path and patch cadence SLA established</li>
+            <li>Policy template, training platform, vendor clause, and IR contact sheet defined</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- TECHNICAL FOUNDATION -->
+  <section class="section" id="technical">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Technical Foundation</span>
+        <h2 class="section-title">SOC experience that strengthens GRC analysis.</h2>
+        <p class="section-intro">My SOC portfolio demonstrates hands-on security work in incident investigation, Windows log analysis, phishing review, DNS activity analysis, and web attack investigation. That foundation helps me assess the controls, risks, and evidence behind governance work.</p>
+      </div>
+      <div class="card-grid">
+        <article class="card">
+          <span class="tag">SOC Bridge</span>
+          <h3>Incident Investigation Experience</h3>
+          <p>Practical investigation work involving network traffic, endpoint activity, and suspicious accounts — translates directly into understanding what detective controls need to surface and preserve.</p>
+        </article>
+        <article class="card">
+          <span class="tag">Evidence Review</span>
+          <h3>Log Analysis & Indicator Review</h3>
+          <p>Reviewing logs, indicators, and findings builds intuition for what constitutes strong audit evidence, what gaps look like in practice, and how to frame control deficiencies for a non-technical audience.</p>
+        </article>
+        <article class="card">
+          <span class="tag">Career Direction</span>
+          <h3>Technical-to-GRC Positioning</h3>
+          <p>Technical exposure combined with governance documentation, risk thinking, and compliance-focused control assessment positions me for roles that need analysts who understand both sides.</p>
+          <div class="cta-row">
+            <a class="btn btn-secondary" href="https://richvince.github.io" target="_blank" rel="noopener">View SOC Portfolio</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- FRAMEWORKS -->
+  <section class="section" id="frameworks">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Frameworks</span>
+        <h2 class="section-title">Control and compliance alignment.</h2>
+        <p class="section-intro">These frameworks are applied across all five audit reports — not just listed as keywords. Each report cites specific control references from the applicable Annex, function, or control number.</p>
+      </div>
+      <div class="framework-grid">
+        <article class="framework-card">
+          <strong>NIST CSF 2.0</strong>
+          <h3>Govern, Identify, Protect, Detect, Respond, Recover</h3>
+          <p>Used for cybersecurity governance, risk communication, and control function mapping across all five audit domains.</p>
+        </article>
+        <article class="framework-card">
+          <strong>ISO 27001:2022</strong>
+          <h3>Information Security Management Controls</h3>
+          <p>Applied at the Annex A control level — A.5, A.6, A.8 — for access, policy, logging, backup, and vulnerability findings.</p>
+        </article>
+        <article class="framework-card">
+          <strong>CIS Controls v8</strong>
+          <h3>Prioritized Technical Safeguards</h3>
+          <p>Used to connect audit recommendations to specific, implementable safeguards — Controls 1, 3, 6, 7, 8, 11, 14, 17.</p>
+        </article>
+        <article class="framework-card">
+          <strong>PCI DSS Foundation</strong>
+          <h3>Payment Security and Compliance Evidence</h3>
+          <p>Foundational learning path for payment security, compliance evidence, and control validation methodology.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRAINING -->
+  <section class="section" id="training">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Training</span>
+        <h2 class="section-title">Cybersecurity and GRC development.</h2>
+        <p class="section-intro">Current training combines technical security foundations with governance, risk, compliance, audit readiness, and control assessment skills.</p>
+      </div>
+      <div class="card-grid">
+        <article class="card">
+          <span class="tag">In Progress</span>
+          <h3>CompTIA Security+</h3>
+          <p>Security fundamentals covering threats, architecture, implementation, operations, risk, governance, and controls — reinforcing the technical foundation behind GRC work.</p>
+        </article>
+        <article class="card">
+          <span class="tag">Planned</span>
+          <h3>GRC Mastery Program</h3>
+          <p>Planned next-step training focused on frameworks, audits, risk assessments, compliance documentation, and governance workflows after Security+ is completed.</p>
+        </article>
+        <article class="card">
+          <span class="tag">Verified</span>
+          <h3>Credly Badge Profile</h3>
+          <p>Public badge profile for verifying completed training and certification achievements across cybersecurity and GRC learning tracks.</p>
+          <div class="cta-row">
+            <a class="btn btn-secondary" href="https://www.credly.com/users/richard-vincent.29374cc2" target="_blank" rel="noopener">View Credly Profile</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Contact</span>
+        <h2 class="section-title">Open to GRC, compliance, and security analyst roles.</h2>
+        <p class="section-intro">Recruiters and hiring teams can access my resume, audit reports, verified badges, and project work below.</p>
+      </div>
+      <div class="contact-card">
+        <div class="contact-row"><strong>Resume</strong><a href="Richard_Vincent_GRC_Resume.pdf" target="_blank" rel="noopener">View Resume PDF</a></div>
+        <div class="contact-row"><strong>Audit Reports</strong><a href="blog.html" target="_blank" rel="noopener">View GRC Audit Report Collection</a></div>
+        <div class="contact-row"><strong>LinkedIn</strong><a href="https://www.linkedin.com/in/richvince" target="_blank" rel="noopener">linkedin.com/in/richvince</a></div>
+        <div class="contact-row"><strong>GitHub</strong><a href="https://github.com/RichVince" target="_blank" rel="noopener">github.com/RichVince</a></div>
+        <div class="contact-row"><strong>Credly</strong><a href="https://www.credly.com/users/richard-vincent.29374cc2" target="_blank" rel="noopener">credly.com/users/richard-vincent.29374cc2</a></div>
+        <div class="contact-row"><strong>SOC Portfolio</strong><a href="https://richvince.github.io" target="_blank" rel="noopener">richvince.github.io</a></div>
+        <div class="contact-row"><strong>Target Roles</strong><span>GRC Analyst · IT Audit Associate · Security Compliance Analyst · Risk Analyst</span></div>
+        <div class="contact-row"><strong>Location</strong><span>Atlanta Metropolitan Area</span></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container">
+    Richard Vincent | GRC Analyst Portfolio<br>
+    <span style="color:var(--muted-2);font-size:0.78rem;">Meridian Consulting Group is a fictional organization created for educational and portfolio demonstration purposes.</span>
+  </div>
+</footer>
+
 </body>
 </html>
